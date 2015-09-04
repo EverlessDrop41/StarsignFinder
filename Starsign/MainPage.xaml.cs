@@ -24,7 +24,13 @@ namespace Starsign
 				//DisplayAlert ("Date Changed", StarSign, "OK");
 				StarsignOutput.Text = StarSign;
 				BirthDate.Date = dcea.NewDate;
+				EffectButton.IsEnabled = true;
 			}
+		}
+
+		public void EffectOnLifeClicked(object sender, EventArgs args) 
+		{
+			DisplayAlert ("Your starsign does: ", "Absolutely nothing", "Thanks!");
 		}
 	}
 }
