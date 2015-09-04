@@ -13,7 +13,7 @@
                      HorizontalOptions="CenterAndExpand"
                      Orientation="Vertical"
                      Spacing="15">
-            <Label Text="Select your birth day" />
+            <Label Text="Select your birthday" />
             <DatePicker x:Name="BirthDatePicker" DateSelected="OnBirthDateChanged">
             	<DatePicker.Format>MM-dd</DatePicker.Format>
             </DatePicker>
