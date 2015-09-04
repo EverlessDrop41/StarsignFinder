@@ -17,6 +17,7 @@
             <DatePicker x:Name="BirthDatePicker" DateSelected="OnBirthDateChanged">
             	<DatePicker.Format>MM-dd</DatePicker.Format>
             </DatePicker>
+            <Label x:Name="StarsignOutput" Text=""/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

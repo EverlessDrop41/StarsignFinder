@@ -9,6 +9,7 @@ namespace Starsign
 	public partial class MainPage : ContentPage
 	{
 		DatePicker BirthDate;
+		String StarSign = "";
 
 		public MainPage ()
 		{
@@ -19,7 +20,9 @@ namespace Starsign
 		public void OnBirthDateChanged(object sender, DateChangedEventArgs dcea) 
 		{
 			if (dcea.NewDate.ToString("M") != dcea.OldDate.ToString("M")) {
-				DisplayAlert ("Date Changed", Starsigns.GetSign(dcea.NewDate).ToString() , "OK");
+				StarSign = Starsigns.GetSign (dcea.NewDate).ToString ();
+				//DisplayAlert ("Date Changed", StarSign, "OK");
+				StarsignOutput.Text = StarSign;
 				BirthDate.Date = dcea.NewDate;
 			}
 		}
