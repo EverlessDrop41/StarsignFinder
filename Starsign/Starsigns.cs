@@ -53,7 +53,7 @@ namespace Starsign
 
 		public static Starsign GetSign(DateTime d) 
 		{
-			d.Year = YEAR;
+			d = new DateTime(YEAR, d.Month, d.Day);
 
 			if (d.Month == 1 && d.Day < 21) {
 				return Starsign.Capricorn;

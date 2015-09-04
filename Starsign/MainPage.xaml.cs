@@ -19,7 +19,7 @@ namespace Starsign
 		public void OnBirthDateChanged(object sender, DateChangedEventArgs dcea) 
 		{
 			if (dcea.NewDate.ToString("M") != dcea.OldDate.ToString("M")) {
-				DisplayAlert ("Date Changed", dcea.NewDate.ToString("M") , "OK");
+				DisplayAlert ("Date Changed", Starsigns.GetSign(dcea.NewDate).ToString() , "OK");
 				BirthDate.Date = dcea.NewDate;
 			}
 		}
