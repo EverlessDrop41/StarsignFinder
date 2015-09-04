@@ -48,12 +48,44 @@ namespace Starsign
 		public static DateRange LibraRange = new DateRange(new DateTime(YEAR, 9, 24), new DateTime(YEAR, 10, 23));
 		public static DateRange ScorpioRange = new DateRange(new DateTime(YEAR, 10, 24), new DateTime(YEAR, 11, 22));
 		public static DateRange SagittariusRange = new DateRange(new DateTime(YEAR, 11, 23), new DateTime(YEAR, 12, 21));
-		public static DateRange CapricornRange = new DateRange(new DateTime(YEAR, 12, 22), new DateTime(YEAR, 1, 20));
+		public static DateRange CapricornRange = new DateRange(new DateTime(YEAR, 12, 22), new DateTime(YEAR + 1, 1, 20));
 		#endregion
 
 		public static Starsign GetSign(DateTime d) 
 		{
-			throw new NotImplementedException ();
+			d.Year = YEAR;
+
+			if (d.Month == 1 && d.Day < 21) {
+				return Starsign.Capricorn;
+			}
+
+			if (AquariusRange.isInRange (d)) {
+				return Starsign.Aquarius;
+			} else if (PiscesRange.isInRange (d)) {
+				return Starsign.Pisces;
+			} else if (AriesRange.isInRange (d)) {
+				return Starsign.Aries;
+			} else if (TaurusTange.isInRange (d)) {
+				return Starsign.Taurus;
+			} else if (GeminiRange.isInRange (d)) {
+				return Starsign.Gemini;
+			} else if (CancerRange.isInRange (d)) {
+				return Starsign.Cancer;
+			} else if (LeoRange.isInRange (d)) {
+				return Starsign.Leo;
+			} else if (VirgoRange.isInRange (d)) {
+				return Starsign.Virgo;
+			} else if (LibraRange.isInRange (d)) {
+				return Starsign.Libra;
+			} else if (ScorpioRange.isInRange (d)) {
+				return Starsign.Scorpio;
+			} else if (SagittariusRange.isInRange (d)) {
+				return Starsign.Sagittarius;
+			} else if (CapricornRange.isInRange (d)) {
+				return Starsign.Capricorn;
+			} else {
+				return Starsign.Error;
+			}
 		}
 	}
 }
